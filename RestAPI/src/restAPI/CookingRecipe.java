@@ -2,15 +2,14 @@ package restAPI;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-
 import static io.restassured.RestAssured.*;
+
+//*Test for CookingRecipe end point
 public class CookingRecipe {
 	
 	@BeforeTest
@@ -42,7 +41,7 @@ public class CookingRecipe {
 			then().assertThat().statusCode(401);
 			
 		}
-		
+		//Log in with valid user id
 		//3.GET request and validate recipe Indicator(type)
 		@Test
 		public void indicator(){
@@ -55,6 +54,7 @@ public class CookingRecipe {
 			Assert.assertEquals(indicator, "VEG");	
 		}
 		
+		//Log in with valid user id
 		//4. Create(POST) recipe
 		@Test
 		public void createRecipe(){
@@ -75,6 +75,7 @@ public class CookingRecipe {
 			Assert.assertEquals(mesg, "Recipe added Successfully");
 		}
 		
+		//Log in with valid user id
 		//5. Update(PUT) recipe
 		@Test
 		public void updateRecipe(){
@@ -92,6 +93,7 @@ public class CookingRecipe {
 		
 		}
 		
+		//Log in with valid user id
 		//6. Delete Recipe
 		@Test
 		public void deleteRecipe(){
